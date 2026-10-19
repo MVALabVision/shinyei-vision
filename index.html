@@ -1,6 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
-<title>SHINYEI Drop Vision v3</title>
+<title>SHINYEI Drop Vision v4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
@@ -48,7 +47,7 @@ table.spec td:first-child{color:var(--mut);white-space:nowrap}
 .ti.ok .st{color:var(--ok)}.ti.ng .st{color:var(--ng)}
 .ti.ok{border-color:#2e6b34}.ti.ng{border-color:#8b2d2d}
 .cam-key{display:flex;justify-content:center;gap:12px;margin-top:6px;font-size:10px;color:var(--mut)}
-.cam-key b{font-family:var(--cond)}.cam-key .k1{color:var(--c1)}.cam-key .k2{color:var(--c2)}
+.cam-key b{font-family:var(--cond)}.cam-key .k1{color:var(--c1)}.cam-key .k2{color:var(--c2)}.cam-key .k3{color:#64b5f6}
 .tp-nav{display:flex;gap:6px;margin-top:8px}
 .tp-nav button{flex:1}
 #pip{position:absolute;right:16px;bottom:calc(12px + var(--sb));width:318px;z-index:11}
@@ -129,7 +128,7 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
 </style>
 <div id="app">
  <div id="info" class="panel">
-  <h1 id="info-h">SHINYEI Drop Test + Vision <small>▾ thu gọn</small></h1>
+  <h1 id="info-h">SHINYEI Drop Test + Vision · v4 <small>▾ thu gọn</small></h1>
   <div class="body">
    <p>Sản phẩm: <b>Điện thoại 75.5×160.5×8.5 mm</b> · kiểm tra góc gá ở <b>vị trí THẤP: tâm kẹp cách mặt đá 200 mm</b> (cao 320 mm so với sàn) · PASS mới nâng lên độ cao thả · 18 vị trí theo <b>Bảng 1</b></p>
    <h2>Đầu kẹp (dựng theo ảnh thực tế)</h2>
@@ -141,10 +140,18 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
    </ul>
    <h2>Cách gá 18 vị trí</h2>
    <table class="spec">
-    <tr><td>Ép mặt TRƯỚC + SAU</td><td>C1–C4, S9–S12 · màn hình quay về CAM1, xoay đĩa đặt góc · khe 8.5 mm</td></tr>
-    <tr><td>Ép cạnh TRÁI + PHẢI</td><td>fE7, fE8, S13, S14, bE17, bE18 · khe 75.5 mm</td></tr>
-    <tr><td>Ép đầu TRÊN + DƯỚI</td><td>fE5, fE6, bE15, bE16 · khe 160.5 mm</td></tr>
+    <tr><td>Ép mặt TRƯỚC + SAU</td><td>C1–C4, S9–S12 · xoay đĩa đặt góc · khe 8.5 mm · C1, C2, S9, S11 màn hình về CAM1; <b>C3, C4, S10, S12 lưng về CAM1</b> để tem quay ra trước</td></tr>
+    <tr><td>Ép cạnh TRÁI + PHẢI</td><td>fE7, fE8, S13, S14, bE17, bE18 · khe 75.5 mm · <b>đầu TRÊN (tem 12) quay về CAM2</b></td></tr>
+    <tr><td>Ép đầu TRÊN + DƯỚI</td><td>fE5, fE6, bE15, bE16 · khe 160.5 mm · <b>cạnh TRÁI (tem 9) quay về CAM2</b></td></tr>
     <tr><td>Edge 30°</td><td>Cạnh chạm nằm <b>dọc trục kẹp</b>, xoay đĩa ±30° → mặt lớn nghiêng 30° như hình Bảng 1. Bản cũ đặt cạnh hướng về CAM2 nên 2 đĩa phải ép chéo lên cạnh – không gá được.</td></tr>
+   </table>
+   <h2>Đánh dấu mẫu · chỉ 2 tem</h2>
+   <table class="spec">
+    <tr><td>Tem 9</td><td>Cạnh TRÁI, sát đầu trên (trong 16 mm cuối, ngoài vùng đĩa ép) · 15×6 mm · DataMatrix + số 9</td></tr>
+    <tr><td>Tem 12</td><td>Đầu TRÊN, lệch về góc trên-trái (cách mép trái 8–23 mm, tránh góc C4) · 15×6 mm · DataMatrix + số 12 · nằm dưới đệm đĩa khi ép 2 đầu (lúc đó không cần đọc)</td></tr>
+    <tr><td>Quy tắc gá</td><td><b>Tem luôn quay ra phía trước (về CAM2)</b> · ép 2 đầu → CAM2 đọc tem 9 · ép 2 cạnh bên → tem 12 · ép mặt → tem 9 hoặc 12</td></tr>
+    <tr><td>Kiểm tra</td><td>Đọc 1 tem (vị trí + chiều mã) = biết tư thế cả khối → suy ra góc/cạnh/mặt sắp chạm đất, so với bước đang thử · không thấy tem hoặc sai điểm chạm → NG, khóa thả · CAM1 không cần đọc tem</td></tr>
+    <tr><td>Số bút đỏ</td><td>Giữ 1–18 như khách đang ghi: góc 1–4, cạnh 5–8 ở mặt trước (14) · cạnh 15–18 ở lưng (13) · 9–12 trên cạnh và đầu</td></tr>
    </table>
    <h2>Module Vision (độc lập, không chạm máy gốc)</h2>
    <table class="spec">
@@ -158,7 +165,7 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
    </table>
    <div class="legend">
     <span><i style="background:#2a7bd4"></i>Máy gốc</span><span><i style="background:#c3cbd4"></i>Nhôm</span>
-    <span><i style="background:#22252a"></i>Camera</span><span><i style="background:#fff7d6"></i>Đèn</span><span><i style="background:#ff8a3d"></i>Điểm va chạm</span><span><i style="background:#ffd166"></i>Kích thước</span>
+    <span><i style="background:#22252a"></i>Camera</span><span><i style="background:#fff7d6"></i>Đèn</span><span><i style="background:#ff8a3d"></i>Điểm va chạm</span><span><i style="background:#42a5f5"></i>Tem 9 / 12</span><span><i style="background:#e0282e"></i>Số bút đỏ</span><span><i style="background:#ffd166"></i>Kích thước</span>
    </div>
    <p class="note">Độ cao kiểm 200 mm hiểu là từ mặt đá granite (mặt va chạm) đến tâm kẹp. Nếu tính từ sàn thì tâm kẹp chỉ cách mặt đá 80 mm, máy dựng đứng (dài 160.5 mm) sẽ chạm đá. Kích thước đầu kẹp ước lượng từ ảnh – cần đo lại trên máy thật. Góc corner 54° giữ theo bản cũ; nếu spec yêu cầu trọng tâm nằm thẳng trên góc chạm thì với máy 75.5×160.5 mm góc này là 64.8°. Chuột trái: xoay · phải: pan · cuộn: zoom.</p>
   </div>
@@ -167,9 +174,9 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
  <div id="test-panel" class="panel">
   <h2>18 vị trí rơi · theo Bảng 1</h2>
   <div id="progress">Đã kiểm 0/18 · NG 0</div>
-  <div class="test-note">Chọn bước → kẹp &amp; xoay đĩa → công nhân bấm <b>GÁ XONG</b> trên hộp nút cầm tay → camera đo ở vị trí thấp → chỉ PASS mới cho nâng lên &amp; thả.</div>
+  <div class="test-note">Chọn bước → gá với <b>tem 9/12 quay ra trước</b> → công nhân bấm <b>GÁ XONG</b> trên hộp nút cầm tay → camera đo ở vị trí thấp → chỉ PASS mới cho nâng lên &amp; thả.</div>
   <div id="test-grid"></div>
-  <div class="cam-key"><span class="k1"><b>Mã xanh dương</b> = CAM1 đo</span><span class="k2"><b>Mã xanh lá</b> = CAM2 đo</span></div>
+  <div class="cam-key"><span class="k1"><b>Xanh dương</b> = CAM1 đo</span><span class="k2"><b>Xanh lá</b> = CAM2 đo</span><span class="k3"><b>■</b> = tem</span></div>
   <div class="tp-nav"><button id="btn-prev">◀ Trước</button><button id="btn-next">Bước tiếp ▶</button><button id="btn-clear" class="toggle">Xóa KQ</button></div>
  </div>
 
@@ -194,6 +201,7 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
   <div class="opt"><b>Kẹp:</b> <span id="sc-clamp"></span></div>
   <div class="opt"><b>Đĩa:</b> <span id="sc-disc"></span> · <b>Khe kẹp:</b> <span id="sc-gap"></span></div>
   <div class="opt"><b>Đo:</b> <span id="sc-meth"></span></div>
+  <div class="opt"><b>Tem:</b> <span id="sc-tag"></span></div>
   <div id="sc-phase"><span class="tower" aria-hidden="true"><i class="r"></i><i class="a"></i><i class="g"></i></span><span id="sc-phase-t">Sẵn sàng</span></div>
   <div class="sc-actions"><button id="btn-confirm" class="go" disabled>✔ GÁ XONG</button><button id="btn-redo" class="redo" disabled>↺ Gá lại</button></div>
  </div>
@@ -204,9 +212,11 @@ button:disabled,button:disabled:hover{background:#3a3f48;color:#7d8592;cursor:no
   <button data-view="cam2">CAM 2 Front</button>
   <button data-view="station">Hộp nút</button>
   <button data-view="grip">Đầu kẹp + ĐT</button>
+  <button data-view="tag">Tem trên mẫu</button>
   <button data-view="pc">Xe PC + HMI</button>
   <button id="btn-slide" class="toggle">Đẩy gọn cụm CAM2</button>
   <button id="btn-ng" class="toggle">Mô phỏng gá lệch</button>
+  <button id="btn-flip" class="toggle">Mô phỏng gá ngược</button>
   <button id="btn-drop" class="warn" disabled>▼ Thả rơi (demo)</button>
   <button id="btn-labels" class="toggle on">Nhãn</button>
   <button id="btn-fov" class="toggle on">FOV + kích thước</button>
@@ -600,7 +610,7 @@ const backMat = new THREE.MeshStandardMaterial({ map: backTex, roughness: 0.3, m
 const phonePivot = new THREE.Group(); carriage.add(phonePivot);
 const phone = new THREE.Group(); phonePivot.add(phone);
 {
-  phone.add(mesh(new RoundedBoxGeometry(PHONE.w, PHONE.h, PHONE.t, 4, 0.0036), M.phoneFrame));
+  phone.add(mesh(new RoundedBoxGeometry(PHONE.w, PHONE.h, PHONE.t, 4, 0.0018), M.phoneFrame));
   add(phone, new THREE.Mesh(rrectGeo(PHONE.w - 0.0012, PHONE.h - 0.0012, 0.0085), screenMat), 0, 0, PHONE.t / 2 + 0.00015);
   const b = add(phone, new THREE.Mesh(rrectGeo(PHONE.w - 0.0012, PHONE.h - 0.0012, 0.0085), backMat), 0, 0, -PHONE.t / 2 - 0.00015); b.rotation.y = Math.PI;
   rbox(phone, 0.026, 0.028, 0.0014, 0.004, M.phoneFrame, 0.017, 0.058, -PHONE.t / 2 - 0.0006);
@@ -614,6 +624,50 @@ const impact = new THREE.Group(); phone.add(impact);
 const impactMat = new THREE.MeshBasicMaterial({ color: 0xff8a3d, transparent: true, opacity: 0.6, depthWrite: false, side: THREE.DoubleSide });
 const impactSolid = new THREE.MeshBasicMaterial({ color: 0xff6d00 });
 const dropArrow = new THREE.ArrowHelper(DOWN, V(0, 0, 0), 0.07, 0xff8a3d, 0.02, 0.013); carriage.add(dropArrow);
+
+/* ============ ĐÁNH DẤU MẪU: 2 tem DataMatrix (9, 12) + số bút đỏ 1–18 của khách ============ */
+const TAG = { L: 0.015, H: 0.006 };                               // tem 15 × 6 mm
+const DMX = { 9: '1010101010110011110110111111001001110101100001100011110010111100101110100100110110000111001111111111', 12: '1010101010110110110110110000001001001101100010100011000010111001001100110100001110000100001111111111' };                       // DataMatrix 10×10, mã "0123" + số mặt
+function dmTagTex(id) {
+  return canvasTex(300, 120, (c, w, h) => {                      // 20 px/mm
+    c.fillStyle = '#fbfbf6'; c.fillRect(0, 0, w, h); c.strokeStyle = '#a9afba'; c.lineWidth = 3; c.strokeRect(1.5, 1.5, w - 3, h - 3);
+    const b = DMX[id], m = 10, sz = 10; c.fillStyle = '#111';
+    for (let r = 0; r < m; r++) for (let q = 0; q < m; q++) if (b[r * m + q] === '1') c.fillRect(10 + q * sz, 10 + r * sz, sz + 0.4, sz + 0.4);
+    c.font = 'bold 94px Arial, Helvetica, sans-serif'; c.textBaseline = 'middle'; c.fillText(String(id), 126, 66);
+  });
+}
+function markTex(w, h, items, line) {                            // số bút đỏ (nền trong suốt)
+  return canvasTex(w, h, (c) => {
+    c.fillStyle = '#e0282e'; c.strokeStyle = '#e0282e'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    for (const [t, x, y, fs] of items) { c.font = `italic bold ${fs}px Arial, Helvetica, sans-serif`; c.fillText(t, x, y); }
+    if (line) { c.lineWidth = line[4]; c.lineCap = 'round'; c.beginPath(); c.moveTo(line[0], line[1]); c.lineTo(line[2], line[3]); c.stroke(); }
+  });
+}
+function decal(tex, w, h, pos, n, xdir, basic) {                  // tấm phẳng dán trên mặt điện thoại; xdir = chiều đọc
+  const mat = basic ? new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 })
+    : new THREE.MeshStandardMaterial({ map: tex, roughness: 0.7, metalness: 0, polygonOffset: true, polygonOffsetFactor: -2 });
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat), z = n.clone().normalize(), x = xdir.clone().normalize(), y = z.clone().cross(x);
+  m.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x, y, z)); m.position.copy(pos); phone.add(m); return m;
+}
+const tagMeshes = {
+  9: decal(dmTagTex(9), TAG.L, TAG.H, V(-PHONE.w / 2 - 0.00025, PHONE.h / 2 - 0.0006 - TAG.L / 2, 0), V(-1, 0, 0), V(0, -1, 0)),
+  12: decal(dmTagTex(12), TAG.L, TAG.H, V(-PHONE.w / 2 + 0.0155, PHONE.h / 2 + 0.00025, 0), V(0, 1, 0), V(-1, 0, 0)),   // lệch về góc trên-trái, cách mép 8–23 mm
+};
+{
+  const K = 5, W = Math.round(PHONE.w * 1000 * K), H = Math.round(PHONE.h * 1000 * K), mm = v => v * K, fs = 32;
+  // mặt trước (14): góc 1–4, cạnh 5–8 – cùng quy ước với mẫu thật của khách
+  decal(markTex(W, H, [['4', mm(8), mm(9), fs], ['3', mm(67.5), mm(9), fs], ['1', mm(8), mm(151.5), fs], ['2', mm(67.5), mm(151.5), fs],
+    ['8', mm(37.75), mm(8), fs], ['7', mm(37.75), mm(152.5), fs], ['5', mm(6.5), mm(80.25), fs], ['6', mm(69), mm(80.25), fs], ['14', mm(37.75), mm(93), 40]],
+    [mm(16), mm(86.5), mm(59.5), mm(86.5), 4]), PHONE.w, PHONE.h, V(0, 0, PHONE.t / 2 + 0.0004), V(0, 0, 1), V(1, 0, 0), true);
+  // mặt lưng (13), nhìn từ phía sau: 16 bên trái ảnh (cạnh phải điện thoại), 15 bên phải
+  decal(markTex(W, H, [['18', mm(37.75), mm(8), fs], ['17', mm(37.75), mm(152.5), fs], ['16', mm(8), mm(80.25), fs], ['15', mm(67.5), mm(80.25), fs], ['13', mm(37.75), mm(100), 40]]),
+    PHONE.w, PHONE.h, V(0, 0, -PHONE.t / 2 - 0.0004), V(0, 0, -1), V(-1, 0, 0), true);
+  const side = (t, pos, n, xd) => decal(markTex(90, 50, [[t, 45, 26, 40]]), 0.009, 0.005, pos, n, xd, true);
+  side('9', V(-PHONE.w / 2 - 0.0002, -PHONE.h / 2 + 0.012, 0), V(-1, 0, 0), V(0, -1, 0));
+  for (const yy of [-1, 1]) side('10', V(PHONE.w / 2 + 0.0002, yy * (PHONE.h / 2 - 0.013), 0), V(1, 0, 0), V(0, 1, 0));
+  for (const xx of [-1, 1]) side('11', V(xx * 0.026, -PHONE.h / 2 - 0.0002, 0), V(0, -1, 0), V(1, 0, 0));
+  for (const xx of [0.004, 0.027]) side('12', V(xx, PHONE.h / 2 + 0.0002, 0), V(0, 1, 0), V(-1, 0, 0));
+}
 
 /* ============ MODULE VISION (khung độc lập) ============ */
 const vision = new THREE.Group(); scene.add(vision);
@@ -867,6 +921,8 @@ const dimLbl1 = label('700 mm', V(CAM1_X / 2, DIM_Y + 0.035, CLAMP_Z), '#ffd166'
 const dimLbl2 = label('1300 mm', V(0, DIM_Y + 0.035, CLAMP_Z + 0.82 * (CAM2_Z_MEAS - CLAMP_Z)), '#ffd166', scene, 'dim');
 label(`${CHECK_H * 1000} mm · mặt đá → tâm kẹp`, V(-0.25, (STONE_TOP + INSPECT_Y) / 2, CLAMP_Z), '#ffd166', scene, 'dim');
 const dimLbl3 = label('Lối thao tác', V(FD_X, 0.03, 1.0), '#ffd166', scene, 'dim');
+const tagLbls = [label('TEM 9 · cạnh trái', V(-0.012, 0, 0.012), '#64b5f6', tagMeshes[9]), label('TEM 12 · đầu trên', V(0.012, 0, 0.012), '#64b5f6', tagMeshes[12])];
+tagLbls.forEach(l => labels.splice(labels.indexOf(l), 1));
 
 /* ============ 18 VỊ TRÍ THEO BẢNG 1 ============ */
 // Trục cục bộ điện thoại: x = rộng (+x cạnh PHẢI), y = dài (+y đầu TRÊN), z = dày (+z MÀN HÌNH)
@@ -882,33 +938,34 @@ const BASE = {
   LRuR: basisQ(V(1, 0, 0), V(0, 0, -1), V(0, 1, 0)),     // ép 2 cạnh bên – màn hình ngửa, đầu TRÊN về phía máy
   TBd:  basisQ(V(0, 0, -1), V(1, 0, 0), V(0, -1, 0)),    // ép 2 đầu – màn hình úp
   TBu:  basisQ(V(0, 0, -1), V(-1, 0, 0), V(0, 1, 0)),    // ép 2 đầu – màn hình ngửa
+  FBr:  basisQ(V(0, 0, 1), V(0, 1, 0), V(-1, 0, 0)),     // ép mặt – LƯNG quay về CAM1 (= FB xoay 180° quanh trục đứng)
 };
 const CA = 90 - CORNER_DEG, EA = EDGE_DEG;
 const DEFS = [
   { code: 'C1', type: 'C', base: 'FB', phi: CA, sx: -1, sy: -1, en: 'Bottom Left Corner', vn: 'Góc DƯỚI-TRÁI' },
   { code: 'C2', type: 'C', base: 'FB', phi: -CA, sx: 1, sy: -1, en: 'Bottom Right Corner', vn: 'Góc DƯỚI-PHẢI' },
-  { code: 'C3', type: 'C', base: 'FB', phi: 180 + CA, sx: 1, sy: 1, en: 'Top Right Corner', vn: 'Góc TRÊN-PHẢI' },
-  { code: 'C4', type: 'C', base: 'FB', phi: 180 - CA, sx: -1, sy: 1, en: 'Top Left Corner', vn: 'Góc TRÊN-TRÁI' },
+  { code: 'C3', type: 'C', base: 'FBr', phi: 180 - CA, flip: true, sx: 1, sy: 1, en: 'Top Right Corner', vn: 'Góc TRÊN-PHẢI' },
+  { code: 'C4', type: 'C', base: 'FBr', phi: 180 + CA, flip: true, sx: -1, sy: 1, en: 'Top Left Corner', vn: 'Góc TRÊN-TRÁI' },
   { code: 'fE5', type: 'E', base: 'TBd', phi: EA, n1: LZ, n2: neg(LX), en: 'Front Left', vn: 'Cạnh TRƯỚC-TRÁI' },
   { code: 'fE6', type: 'E', base: 'TBd', phi: -EA, n1: LZ, n2: LX, en: 'Front Right', vn: 'Cạnh TRƯỚC-PHẢI' },
   { code: 'fE7', type: 'E', base: 'LRd', phi: -EA, n1: LZ, n2: neg(LY), en: 'Front Bottom', vn: 'Cạnh TRƯỚC-DƯỚI' },
-  { code: 'fE8', type: 'E', base: 'LRdR', phi: -EA, n1: LZ, n2: LY, en: 'Front Top', vn: 'Cạnh TRƯỚC-TRÊN' },
+  { code: 'fE8', type: 'E', base: 'LRd', phi: EA, flip: true, n1: LZ, n2: LY, en: 'Front Top', vn: 'Cạnh TRƯỚC-TRÊN' },
   { code: 'S9', type: 'S', base: 'FB', phi: 90, n: neg(LX), en: 'Left', vn: 'Mặt TRÁI', o: 'Cạnh TRÁI úp xuống · máy nằm ngang' },
-  { code: 'S10', type: 'S', base: 'FB', phi: -90, n: LX, en: 'Right', vn: 'Mặt PHẢI', o: 'Cạnh PHẢI úp xuống · máy nằm ngang' },
+  { code: 'S10', type: 'S', base: 'FBr', phi: 90, flip: true, n: LX, en: 'Right', vn: 'Mặt PHẢI', o: 'Cạnh PHẢI úp xuống · máy nằm ngang · lưng về CAM1' },
   { code: 'S11', type: 'S', base: 'FB', phi: 0, n: neg(LY), en: 'Bottom', vn: 'Mặt ĐÁY', o: 'Đầu DƯỚI (cổng sạc) chúc xuống · máy thẳng đứng' },
-  { code: 'S12', type: 'S', base: 'FB', phi: 180, n: LY, en: 'Top', vn: 'Mặt ĐỈNH', o: 'Đầu TRÊN chúc xuống · máy dựng ngược' },
+  { code: 'S12', type: 'S', base: 'FBr', phi: 180, flip: true, n: LY, en: 'Top', vn: 'Mặt ĐỈNH', o: 'Đầu TRÊN chúc xuống · máy dựng ngược · lưng về CAM1' },
   { code: 'S13', type: 'S', base: 'LRu', phi: 0, n: neg(LZ), en: 'Back', vn: 'Mặt LƯNG', o: 'Nằm phẳng · LƯNG úp xuống, màn hình ngửa' },
   { code: 'S14', type: 'S', base: 'LRd', phi: 0, n: LZ, en: 'Front', vn: 'Mặt TRƯỚC (màn hình)', o: 'Nằm phẳng · MÀN HÌNH úp xuống' },
   { code: 'bE15', type: 'E', base: 'TBu', phi: EA, n1: neg(LZ), n2: neg(LX), en: 'Back Left', vn: 'Cạnh SAU-TRÁI' },
   { code: 'bE16', type: 'E', base: 'TBu', phi: -EA, n1: neg(LZ), n2: LX, en: 'Back Right', vn: 'Cạnh SAU-PHẢI' },
   { code: 'bE17', type: 'E', base: 'LRu', phi: -EA, n1: neg(LZ), n2: neg(LY), en: 'Back Bottom', vn: 'Cạnh SAU-DƯỚI' },
-  { code: 'bE18', type: 'E', base: 'LRuR', phi: -EA, n1: neg(LZ), n2: LY, en: 'Back Top', vn: 'Cạnh SAU-TRÊN' },
+  { code: 'bE18', type: 'E', base: 'LRu', phi: EA, flip: true, n1: neg(LZ), n2: LY, en: 'Back Top', vn: 'Cạnh SAU-TRÊN' },
 ];
 const qPose = (base, phiDeg, rollDeg = 0) => new THREE.Quaternion().setFromAxisAngle(WZ, rollDeg * DEG).multiply(new THREE.Quaternion().setFromAxisAngle(WX, phiDeg * DEG)).multiply(BASE[base]);
 const tests = DEFS.map((d, i) => {
   const clamp = d.base.slice(0, 2), cam = clamp === 'FB' ? 'CAM1' : 'CAM2';
   const target = d.type === 'C' ? CORNER_DEG : d.type === 'E' ? EDGE_DEG : 90, tol = d.type === 'C' ? 2 : 1;
-  const orient = d.o || (d.type === 'C' ? `${d.vn} chạm đất · cạnh dài nghiêng ${CORNER_DEG}° so với mặt đất` : `${d.vn} chạm đất · ${d.n1.z > 0 ? 'màn hình' : 'lưng'} úp, nghiêng ${EDGE_DEG}° so với mặt đất`);
+  const orient = d.o || (d.type === 'C' ? `${d.vn} chạm đất · cạnh dài nghiêng ${CORNER_DEG}° so với mặt đất${d.flip ? ' · lưng về CAM1' : ''}` : `${d.vn} chạm đất · ${d.n1.z > 0 ? 'màn hình' : 'lưng'} úp, nghiêng ${EDGE_DEG}° so với mặt đất`);
   const name = d.type === 'C' ? `Corner ${CORNER_DEG}°` : d.type === 'E' ? `Edge ${EDGE_DEG}°` : 'Face 90°';
   return { ...d, num: i + 1, clamp, cam, q: qPose(d.base, d.phi), target, tol, orient, name };
 });
@@ -928,6 +985,24 @@ function measure(t, q) {
   const n1 = wv(t.n1, q); return { meas: Math.atan2(Math.abs(n1.z), -n1.y) / DEG, roll: rollOf(t, q), h };
 }
 const passOf = (t, m) => Math.abs(m.meas - t.target) <= t.tol && (m.roll === undefined || Math.abs(m.roll) <= ROLL_TOL);
+
+/* ---- TEM: CAM2 đọc tem 9 / 12 → biết tư thế cả khối → suy ra điểm sắp chạm đất ---- */
+const TAGS = [{ id: 9, n: neg(LX), p: V(-HALF[0], HALF[1] - 0.0081, 0), name: 'cạnh trái' }, { id: 12, n: LY, p: V(-HALF[0] + 0.0155, HALF[1], 0), name: 'đầu trên' }];
+const tagCovered = (t, id) => t.clamp === 'TB' && id === 12;               // ép 2 đầu: đệm đĩa phủ đầu trên
+function readTags(t, q) {
+  return TAGS.map(g => ({ ...g, cos: wv(g.n, q).z })).filter(g => g.cos > 0.5 && !tagCovered(t, g.id)).sort((a, b) => b.cos - a.cos);
+}
+const FACE_N = [['-x', neg(LX)], ['+x', LX], ['-y', neg(LY)], ['+y', LY], ['-z', neg(LZ)], ['+z', LZ]];
+const featOf = q => FACE_N.filter(([, n]) => wv(n, q).y < -0.25).map(([k]) => k).sort().join(',');
+tests.forEach(t => { t.feat = featOf(t.q); t.tags = readTags(t, t.q).map(g => g.id); });
+const featName = f => { const t = tests.find(tt => tt.feat === f); return t ? t.code : '?'; };
+function tagCheck(t, q) {
+  const seen = readTags(t, q).map(g => g.id);
+  if (!seen.length) return { ok: false, seen, txt: 'không thấy tem', msg: 'Không thấy tem 9/12 – gá ngược? Quay tem ra phía trước' };
+  const got = featName(featOf(q)), ok = got === t.code, ids = seen.join(' + ');
+  return { ok, seen, got, txt: `tem ${ids} → ${got}${ok ? ' ✓' : ` ≠ ${t.code}`}`, msg: ok ? `Tem ${ids} → điểm chạm ${got} đúng` : `Tem ${ids} → điểm chạm thực tế ${got}, không phải ${t.code}` };
+}
+const GQ = [LX, LY, LZ].map(a => new THREE.Quaternion().setFromAxisAngle(a, Math.PI));   // xoay 180° quanh trục thân: bóng y hệt
 function setImpact(t) {
   impact.children.slice().forEach(o => { impact.remove(o); o.geometry.dispose(); });
   const dims = [PHONE.w, PHONE.h, PHONE.t];
@@ -950,7 +1025,7 @@ function setImpact(t) {
 // Hình nhỏ giống Bảng 1 (nhìn dọc trục kẹp từ phía CAM1)
 function picto(t, big = false) {
   const S = v => { const w = wv(v, t.q); return [-w.z, -w.y]; }, f = n => n.toFixed(1);
-  let g = '', pts = [];
+  let g = '', g2 = '', pts = [];
   if (t.clamp === 'FB') {
     const W = 21, H = 45, [ux, uy] = S(LY), [rx, ry] = S(LX), ang = Math.atan2(uy, ux) / DEG + 90;
     g += `<g transform="rotate(${f(ang)})"><rect x="${-W / 2}" y="${-H / 2}" width="${W}" height="${H}" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="${f(-W * 0.27)}" y1="${f(-H / 2 + 5)}" x2="${f(W * 0.27)}" y2="${f(-H / 2 + 5)}" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></g>`;
@@ -965,14 +1040,22 @@ function picto(t, big = false) {
     }
     for (const s of [-1, 1]) for (const k of [-1, 1]) pts.push([s * a[0] + k * fx * TH / 2, s * a[1] + k * fy * TH / 2]);
   }
+  {
+    const K = t.clamp === 'FB' ? [21 / PHONE.w, 45 / PHONE.h, 0] : t.clamp === 'LR' ? [0, 46 / PHONE.h, 4.6 / PHONE.t] : [27 / PHONE.w, 0, 4.6 / PHONE.t];
+    for (const g of readTags(t, t.q)) {
+      let x = 0, y = 0; [LX, LY, LZ].forEach((e, i) => { const [sx, sy] = S(e); const c = g.p.getComponent(i) * K[i]; x += sx * c; y += sy * c; });
+      const r = big ? 2.6 : 3.2;
+      g2 += `<rect x="${f(x - r)}" y="${f(y - r)}" width="${f(2 * r)}" height="${f(2 * r)}" rx="0.8" fill="#42a5f5" stroke="#0b0f17" stroke-width="0.8"/>`;
+    }
+  }
   const yMax = Math.max(...pts.map(p => p[1])), low = pts.filter(p => p[1] > yMax - 0.8), lx = low.reduce((s, p) => s + p[0], 0) / low.length;
   g += `<line x1="-27" y1="${f(yMax + 1.8)}" x2="27" y2="${f(yMax + 1.8)}" stroke="#6d7686" stroke-width="1.1" stroke-dasharray="2.2 2"/>`;
   g += `<circle cx="${f(lx)}" cy="${f(yMax)}" r="${big ? 2.4 : 3}" fill="#ff8a3d"/>`;
-  return `<svg viewBox="${big ? '-36 -36 72 72' : '-30 -30 60 60'}" aria-hidden="true">${g}</svg>`;
+  return `<svg viewBox="${big ? '-36 -36 72 72' : '-30 -30 60 60'}" aria-hidden="true">${g}${g2}</svg>`;
 }
 
 /* ============ TRẠNG THÁI + HOẠT CẢNH ============ */
-const state = { f: 0, c0: 0, disc: 0, q: new THREE.Quaternion(), active: 0, phase: 'idle', dtCap: 0.1, dropping: false, forceNG: false, boost: 0, press: 0, slide: 0, stowed: false, pipCam: null };
+const state = { f: 0, c0: 0, disc: 0, q: new THREE.Quaternion(), active: 0, phase: 'idle', dtCap: 0.1, dropping: false, forceNG: false, forceFlip: false, flipG: null, boost: 0, press: 0, slide: 0, stowed: false, pipCam: null };
 const results = new Array(tests.length).fill(null);
 const smooth = k => k * k * (3 - 2 * k);
 const cam2Z = () => CAM2_Z_MEAS - SLIDE_TRAVEL * smooth(state.slide);   // slide 0 = ĐO (kéo ra), 1 = GỌN (đẩy sát máy)
@@ -1017,6 +1100,7 @@ const VIEWS = {
   cam2: [V(1.45, 1.20, 2.55), V(0.0, 0.30, 1.05)], station: ST_VIEW, grip: [V(0.40, INSPECT_Y + 0.15, 0.52), V(0, INSPECT_Y + 0.01, 0.0)],
   pc: [V(-0.15, 1.65, 1.95), V(-1.42, 0.68, 0.86)], t1: [V(0.36, INSPECT_Y + 0.15, 0.50), V(0, INSPECT_Y, 0.04)], t2: [V(0.40, INSPECT_Y + 0.19, 0.60), V(0, INSPECT_Y, 0.04)],
   drop: [V(1.75, 1.25, 2.45), V(0, 0.78, 0.08)],
+  tag: [V(0.035, INSPECT_Y + 0.065, CLAMP_Z + 0.29), V(0, INSPECT_Y, CLAMP_Z)],
 };
 
 /* ============ UI ============ */
@@ -1051,7 +1135,7 @@ function refreshGrid() {
     t.el.querySelector('.st').textContent = r ? (r.pass ? (r.dropped ? '✓↓' : '✓') : '✗') : ''; if (r) { n++; if (!r.pass) ng++; } });
   $('progress').textContent = `Đã kiểm ${n}/18 · NG ${ng}`;
 }
-const CLAMP_TXT = { FB: 'Hai đĩa ép MẶT TRƯỚC + MẶT SAU · màn hình quay về CAM1', LR: 'Hai đĩa ép cạnh TRÁI + cạnh PHẢI', TB: 'Hai đĩa ép đầu TRÊN + đầu DƯỚI' };
+const CLAMP_TXT = { FB: 'Hai đĩa ép MẶT TRƯỚC + MẶT SAU', LR: 'Hai đĩa ép cạnh TRÁI + cạnh PHẢI', TB: 'Hai đĩa ép đầu TRÊN + đầu DƯỚI' };
 const methTxt = t => t.cam === 'CAM1' ? 'CAM1 Side · silhouette backlight, đo trên phần nhô ra ngoài đĩa Ø128'
   : t.type === 'E' ? `CAM2 Front · chiều cao chiếu h → góc nghiêng, kèm độ ngang cạnh chạm ±${ROLL_TOL}°` : `CAM2 Front · nhìn dọc thân máy → độ phẳng, kèm độ ngang ±${ROLL_TOL}°`;
 function discTxt(t) { const a = Math.round(nrm180(t.phi)); return a === 0 ? '0°' : Math.abs(a) === 180 ? '180°' : `${a > 0 ? '↺ +' : '↻ −'}${Math.abs(a)}° (nhìn từ CAM1)`; }
@@ -1061,7 +1145,8 @@ function updateStepCard() {
   $('sc-code').textContent = t.code; $('sc-name').textContent = t.vn;
   $('sc-en').textContent = `${t.num} · ${t.en} · ${t.name.split(' ')[0]} ${t.target}° ± ${t.tol}°`;
   $('sc-cam').textContent = t.cam === 'CAM1' ? 'CAM 1 Side' : 'CAM 2 Front'; $('sc-cam').className = 'chip' + (t.cam === 'CAM2' ? ' c2' : '');
-  $('sc-orient').textContent = t.orient; $('sc-clamp').textContent = CLAMP_TXT[t.clamp];
+  $('sc-orient').textContent = t.orient; $('sc-clamp').textContent = CLAMP_TXT[t.clamp] + (t.clamp === 'FB' ? (t.base === 'FBr' ? ' · LƯNG quay về CAM1' : ' · màn hình quay về CAM1') : '');
+  $('sc-tag').textContent = `Tem ${t.tags.join(' + ')} quay ra trước · CAM2 đọc để xác nhận điểm chạm`;
   $('sc-disc').textContent = discTxt(t); $('sc-gap').textContent = `${(2 * halfExtent(t.q, 0) * 1000).toFixed(1)} mm`;
   $('sc-meth').textContent = methTxt(t);
 }
@@ -1081,13 +1166,15 @@ function updatePip() {
   $('pip-sub').textContent = `${c1 ? 'Backlight' : 'Bar ×2 + PL'} · lens ${o.f} mm · WD ${Math.round(wd * 1000)} mm · FOV ${Math.round(fw * 1000)}×${Math.round(fh * 1000)} mm · ${(fw * 1000 / SENSOR.px).toFixed(3)} mm/px`;
   $('pip-img').classList.toggle('mono', !c1); $('pip-img').classList.toggle('defocus', !c1 && !cam2AtMeas());
   const b = $('pip-badge'), busy = state.phase === 'mount' || state.phase === 'check';
-  if (!used) { $('pip-meas').textContent = `Bước ${t.code} đo bằng ${t.cam === 'CAM1' ? 'CAM 1' : 'CAM 2'}`; b.className = 'badge'; b.textContent = '—'; }
+  if (!used && !c1 && r && r.tag && !busy) { $('pip-meas').innerHTML = `CAM 2 đọc <b>${r.tag.txt}</b>`; b.className = 'badge ' + (r.tag.ok ? 'ok' : 'ng'); b.textContent = r.tag.ok ? 'TEM OK' : 'TEM NG'; }
+  else if (!used) { $('pip-meas').textContent = !c1 ? `Bước ${t.code} đo góc bằng CAM 1 · CAM 2 đọc tem ${t.tags.join('+')}` : `Bước ${t.code} đo bằng CAM 2`; b.className = 'badge'; b.textContent = '—'; }
   else if (busy || !r) {
     $('pip-meas').textContent = state.phase === 'mount' ? 'Đang gá…' : state.phase === 'check' ? 'Đang chụp & đo…' : state.phase === 'confirm' ? (!cam2AtMeas() ? 'Cụm CAM2 đang thu gọn' : 'Chờ công nhân bấm GÁ XONG') : `Spec ${t.target}°±${t.tol}°`;
     b.className = 'badge wait'; b.textContent = busy ? '…' : '—';
   } else {
     $('pip-meas').innerHTML = r.roll === undefined ? `Đo <b>${r.meas.toFixed(2)}°</b> · lệch ${sgn(r.meas - t.target)}° · spec ±${t.tol}°`
       : `${t.type === 'S' ? 'Phẳng' : 'θ'} <b>${t.type === 'S' ? sgn(r.meas - 90) : r.meas.toFixed(2)}°</b> · ngang <b>${sgn(r.roll)}°</b> · h ${r.h.toFixed(1)} mm`;
+    if (r.tag) $('pip-meas').innerHTML += ` · <span style="color:${r.tag.ok ? '#81c784' : '#ef5350'}">${r.tag.txt}</span>`;
     b.className = 'badge ' + (r.pass ? 'ok' : 'ng'); b.textContent = r.pass ? 'PASS' : 'NG';
   }
 }
@@ -1106,6 +1193,8 @@ function drawHMI() {
   if (r && r.roll !== undefined) { c.font = '26px Barlow, Segoe UI, Arial'; c.fillStyle = '#9aa4b5'; c.fillText(`ngang ${sgn(r.roll)}° · h ${r.h.toFixed(1)} mm`, 30, 378); }
   c.fillStyle = !r ? '#5d6470' : r.pass ? '#2e7d32' : '#c62828'; c.fillRect(30, 398, 380, 100);
   c.fillStyle = '#fff'; c.font = 'bold 68px Barlow, Segoe UI, Arial'; c.fillText(!r ? 'WAIT' : r.pass ? 'PASS' : 'NG', 70, 472);
+  c.font = 'bold 26px Barlow, Segoe UI, Arial'; c.fillStyle = !r || !r.tag ? '#64b5f6' : r.tag.ok ? '#81c784' : '#ef5350';
+  c.fillText(!r || !r.tag ? `Tem ${t.tags.join(' + ')} quay ra trước (CAM2)` : `TEM: ${r.tag.txt}`, 30, 540);
   tests.forEach((tt, i) => { const x = 520 + (i % 3) * 160, y = 96 + Math.floor(i / 3) * 62, rr = results[i];
     c.fillStyle = !rr ? '#26303f' : rr.pass ? '#2e7d32' : '#c62828'; c.fillRect(x, y, 148, 50);
     if (i === state.active) { c.strokeStyle = '#ffb74d'; c.lineWidth = 4; c.strokeRect(x, y, 148, 50); }
@@ -1127,7 +1216,8 @@ async function selectTest(i) {
   const tok = ++selToken; tweens.length = 0; state.boost = 0; state.press = 0; state.active = i; state.pipCam = null;
   const t = tests[i]; results[i] = null; setImpact(t); refreshGrid(); updateStepCard(); setPhase('mount', 'Mở hàm kẹp…'); updatePip();
   flyTo(t.cam === 'CAM1' ? VIEWS.t1 : VIEWS.t2);
-  const e = genErr(t), qT = qPose(t.base, t.phi + e.da, e.dr);
+  const e = genErr(t); let qT = qPose(t.base, t.phi + e.da, e.dr); state.flipG = null;
+  if (state.forceFlip) { const opts = GQ.filter(g => featOf(qT.clone().multiply(g)) !== t.feat); state.flipG = opts[Math.floor(Math.random() * opts.length)]; qT = qT.clone().multiply(state.flipG); }
   const fT = halfExtent(qT, 0) + PAD - 0.0003, c0T = fT + YOKE_OFF + ROD_CLAMP, dT = (t.phi + e.da) * DEG, wide = Math.max(WIDE_F, fT + OPEN + 0.006);
   let f0 = state.f, c00 = state.c0;
   await anim(0.3, k => { state.f = f0 + OPEN * k; }); if (tok !== selToken) return;
@@ -1148,14 +1238,16 @@ async function confirmMount() {
   const tok = selToken; state.pipCam = null;
   setPhase('check', 'Đã nhận GÁ XONG – khóa hàm kẹp & đĩa, kiểm vùng nhìn không bị che…'); updatePip();
   await anim(0.3, k => { state.press = Math.sin(k * Math.PI); }); if (tok !== selToken) return; state.press = 0;
-  setPhase('check', `${t.cam} trigger + strobe đèn – chụp & đo…`);
+  setPhase('check', `${t.cam === 'CAM1' ? 'CAM1 + CAM2' : 'CAM2'} trigger + strobe – đo góc & đọc tem…`);
   await anim(0.35, k => { state.boost = Math.sin(k * Math.PI); }); if (tok !== selToken) return; state.boost = 0;
-  const m = measure(t, state.q), pass = passOf(t, m);
-  results[state.active] = { ...m, pass };
-  refreshGrid(); setPhase(pass ? 'pass' : 'ng'); updatePip();
+  const qGeo = state.flipG ? state.q.clone().multiply(state.flipG) : state.q;   // gá ngược 180°: bóng y hệt → góc đo như gá đúng
+  const m = measure(t, qGeo), passGeo = passOf(t, m), tag = tagCheck(t, state.q), pass = passGeo && tag.ok;
+  results[state.active] = { ...m, pass, passGeo, tag };
+  refreshGrid(); setPhase(pass ? 'pass' : 'ng', !tag.ok ? `NG – ${tag.msg} · khóa thả, bấm GÁ LẠI` : undefined); updatePip();
+  if (!tag.ok) toast(passGeo ? `⛔ Góc đúng nhưng sai điểm chạm: ${tag.msg}` : `⛔ ${tag.msg}`);
 }
 function seatNow(i) {
-  const t = tests[i], e = genErr(t); state.active = i; state.q.copy(qPose(t.base, t.phi + e.da, e.dr)); state.f = halfExtent(state.q, 0) + PAD - 0.0003;
+  const t = tests[i], e = genErr(t); state.active = i; state.flipG = null; state.q.copy(qPose(t.base, t.phi + e.da, e.dr)); state.f = halfExtent(state.q, 0) + PAD - 0.0003;
   state.c0 = state.f + YOKE_OFF + ROD_CLAMP; state.disc = (t.phi + e.da) * DEG; setImpact(t);
 }
 
@@ -1207,10 +1299,43 @@ function renderPip() {
   const cv = renderer.domElement;
   pipCtx.fillStyle = '#000'; pipCtx.fillRect(0, 0, pipImg.width, pipImg.height);
   pipCtx.drawImage(cv, 0, cv.height - Math.round(h * DPR), Math.round(w * DPR), Math.round(h * DPR), (PW - w) / 2 * DPR, (PH_ - h) / 2 * DPR, w * DPR, h * DPR);
+  let zoom = null;
+  if (!sil && cam2AtMeas() && !state.dropping && state.phase !== 'mount') { const g = visibleTag(); if (g) zoom = renderZoom(g, w, h); }
   renderer.setScissorTest(false); renderer.setViewport(0, 0, innerWidth, innerHeight);
   scene.overrideMaterial = null; scene.background = BG; scene.fog = FOG; renderer.shadowMap.autoUpdate = true;
   hideInPip.forEach((o, i) => o.visible = vis[i]);
-  return { w, h, ox: (PW - w) / 2, oy: (PH_ - h) / 2 };
+  return { w, h, ox: (PW - w) / 2, oy: (PH_ - h) / 2, zoom };
+}
+const vcamZ = new THREE.PerspectiveCamera(1, 1.5, 0.05, 6), _tq = new THREE.Quaternion(), _tp = new THREE.Vector3();
+function tagState(id) {                         // tem đang quay về CAM2 không (theo tư thế thật trên đầu kẹp)
+  const m = tagMeshes[id]; m.getWorldQuaternion(_tq); const n = V(0, 0, 1).applyQuaternion(_tq);
+  return n.z > 0.5 && !tagCovered(tests[state.active], id);
+}
+function visibleTag() { let best = null, bz = 0.5; for (const id of [9, 12]) { if (!tagState(id)) continue; const m = tagMeshes[id]; m.getWorldQuaternion(_tq); const z = V(0, 0, 1).applyQuaternion(_tq).z; if (z > bz) { bz = z; best = id; } } return best; }
+function renderZoom(id, w, h) {                  // khung zoom ~ ảnh 5MP thật (0,128 mm/px) quanh tem
+  const zw = Math.round(w * 0.34), zh = Math.round(zw / 1.5), c = tagMeshes[id].getWorldPosition(_tp);
+  vcamZ.position.copy(vcam2.position); vcamZ.up.set(0, 1, 0); vcamZ.lookAt(c);
+  vcamZ.fov = 2 * Math.atan(0.0075 / vcamZ.position.distanceTo(c)) / DEG; vcamZ.aspect = 1.5; vcamZ.updateProjectionMatrix();
+  renderer.setViewport(0, 0, zw, zh); renderer.setScissor(0, 0, zw, zh); renderer.render(scene, vcamZ);
+  const cv = renderer.domElement, x = (PW + w) / 2 - zw - 6, y = (PH_ - h) / 2 + 24;
+  pipCtx.drawImage(cv, 0, cv.height - Math.round(zh * DPR), Math.round(zw * DPR), Math.round(zh * DPR), x * DPR, y * DPR, zw * DPR, zh * DPR);
+  return { id, x, y, w: zw, h: zh };
+}
+function drawTags(c, P, img, r, busy) {          // khung quanh tem nhìn thấy trong ảnh CAM2
+  const done = r && r.tag && !busy, col = !done ? '#ffb300' : r.tag.ok ? '#2ecc71' : '#ff3d3d';
+  let any = false;
+  for (const id of [9, 12]) {
+    if (!tagState(id)) continue; any = true;
+    const m = tagMeshes[id], pts = [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(([a, b]) => P(m.localToWorld(V(a * TAG.L / 2 * 1.35, b * TAG.H / 2 * 1.5, 0))));
+    c.strokeStyle = col; c.lineWidth = 1.6; c.beginPath(); pts.forEach((p, i) => i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])); c.closePath(); c.stroke();
+    const top = pts.reduce((a, p) => p[1] < a[1] ? p : a);
+    hudText(c, `TEM ${id}`, top[0] - 14, top[1] - 6, 'bold 10px Barlow, Segoe UI', 'rgba(0,0,0,.72)', col);
+  }
+  if (img.zoom) {
+    const z = img.zoom; c.strokeStyle = col; c.lineWidth = 1.5; c.strokeRect(z.x, z.y, z.w, z.h);
+    hudText(c, done ? (r.tag.ok ? `ĐỌC ${r.tag.seen.join('+')} ✓` : `TEM ${r.tag.seen.join('+') || '?'} ✗`) : `ZOOM TEM ${z.id}`, z.x + 4, z.y + z.h + 13, 'bold 10px Barlow, Segoe UI', 'rgba(0,0,0,.75)', col);
+  }
+  if (done && !any) hudText(c, 'KHÔNG THẤY TEM 9/12 – gá ngược?', 10 + img.ox, img.oy + 52, 'bold 11px Barlow, Segoe UI', 'rgba(198,40,40,.92)');
 }
 const _q = new THREE.Quaternion(), _c = new THREE.Vector3();
 function hudText(c, s, x, y, font, bg = 'rgba(0,0,0,.7)', fg = '#fff') { c.font = font; const w = c.measureText(s).width; c.fillStyle = bg; c.fillRect(x - 4, y - 12, w + 8, 16); c.fillStyle = fg; c.fillText(s, x, y); }
@@ -1225,18 +1350,20 @@ function drawOverlay(img) {
     let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;     // ROI quanh điện thoại
     for (let i = 0; i < 8; i++) { const v = V((i & 1 ? 1 : -1) * HALF[0], (i & 2 ? 1 : -1) * HALF[1], (i & 4 ? 1 : -1) * HALF[2]); phone.localToWorld(v); const [px, py] = P(v); x0 = Math.min(x0, px); y0 = Math.min(y0, py); x1 = Math.max(x1, px); y1 = Math.max(y1, py); }
     c.strokeStyle = col; c.lineWidth = 1.5; c.setLineDash([6, 3]); c.strokeRect(x0 - 6, y0 - 6, x1 - x0 + 12, y1 - y0 + 12); c.setLineDash([]);
-    if (r && !busy) (sil ? drawMeasure1 : drawMeasure2)(c, t, P, col, r);
+    if (r && !busy) (sil ? drawMeasure1 : drawMeasure2)(c, t, P, r.passGeo === undefined || r.passGeo ? '#2ecc71' : '#ff3d3d', r);
   }
+  if (!sil && !out && !state.dropping && state.phase !== 'mount') drawTags(c, P, img, r, busy);
   const head = !used ? `${sil ? 'CAM 1' : 'CAM 2'} · bước ${t.code} đo bằng ${t.cam === 'CAM1' ? 'CAM 1' : 'CAM 2'}` : `${t.code} · ${t.vn} · spec ${t.target}°±${t.tol}°${t.cam === 'CAM2' ? ` · ngang ±${ROLL_TOL}°` : ''}`;
   hudText(c, head, img.ox + 9, img.oy + 16, 'bold 11px Barlow, Segoe UI, sans-serif');
   if (out) hudText(c, `Cụm CAM2 thu gọn · WD ${Math.round((cam2Z() - CLAMP_Z) * 1000)} mm – ngoài nét, không đo`, img.ox + 9, img.oy + 34, 'bold 11px Barlow, Segoe UI, sans-serif', 'rgba(178,106,0,.9)');
-  const note = sil ? 'Silhouette backlight · đĩa kẹp che tâm, đo phần nhô ra' : 'Ảnh phản xạ · đo biên trên/dưới của dải điện thoại';
+  const note = sil ? 'Silhouette backlight · đĩa kẹp che tâm, đo phần nhô ra' : 'Ảnh phản xạ · đo biên dải điện thoại + đọc tem 9/12';
   hudText(c, note, img.ox + 8, img.oy + img.h - 8, '10px Barlow, Segoe UI', 'rgba(0,0,0,.6)');
   const fwmm = sil ? OPT1.w * 1000 : SENSOR.w * (cam2Z() - CLAMP_Z) / OPT2.f * 1000, L = 20 / fwmm * img.w;
   c.fillStyle = sil ? '#1565c0' : '#4fc3f7'; c.fillRect(img.ox + img.w - 10 - L, img.oy + img.h - 26, L, 3); c.font = '10px Barlow, Segoe UI'; c.fillText('20 mm', img.ox + img.w - 10 - L, img.oy + img.h - 30);
 }
+const geoQ = () => { phonePivot.getWorldQuaternion(_q); if (state.flipG) _q.multiply(state.flipG); return _q; };   // gá ngược: vẽ theo bóng (giống gá đúng)
 function drawMeasure1(c, t, P, col, r) {           // CAM1: silhouette – đường biên + tham chiếu ngang + cung góc
-  const Q = phonePivot.getWorldQuaternion(_q), C = phonePivot.getWorldPosition(_c);
+  const Q = geoQ(), C = phonePivot.getWorldPosition(_c);
   const ax = i => [LX, LY, LZ][i].clone().applyQuaternion(Q);
   let K, P2, nTip = null;
   if (t.type === 'S') {
@@ -1264,10 +1391,10 @@ function drawMeasure1(c, t, P, col, r) {           // CAM1: silhouette – đư�
     c.strokeStyle = col; c.lineWidth = 1.6; c.beginPath(); c.arc(k[0], k[1], 28, a1, a1 + d, d < 0); c.stroke();
     tx = k[0] + rs * 34; ty = k[1] + (d < 0 ? -10 : 18);
   }
-  resultTag(c, `${r.meas.toFixed(2)}° ${r.pass ? 'PASS' : 'NG'}`, tx, ty, col);
+  resultTag(c, `${r.meas.toFixed(2)}° ${r.passGeo === false ? 'NG' : r.pass ? 'PASS' : 'góc OK'}`, tx, ty, col);
 }
 function drawMeasure2(c, t, P, col, r) {           // CAM2: biên dưới (cạnh chạm) + tham chiếu ngang + chiều cao chiếu h
-  const Q = phonePivot.getWorldQuaternion(_q), C = phonePivot.getWorldPosition(_c);
+  const Q = geoQ(), C = phonePivot.getWorldPosition(_c);
   const ax = i => [LX, LY, LZ][i].clone().applyQuaternion(Q), ia = t.clamp === 'LR' ? 0 : 1, eW = ax(ia), o = [0, 1, 2].filter(i => i !== ia);
   const edges = [];
   for (const s1 of [-1, 1]) for (const s2 of [-1, 1]) { const m = C.clone().addScaledVector(ax(o[0]), s1 * HALF[o[0]]).addScaledVector(ax(o[1]), s2 * HALF[o[1]]); edges.push([P(m.clone().addScaledVector(eW, HALF[ia])), P(m.clone().addScaledVector(eW, -HALF[ia]))]); }
@@ -1284,7 +1411,7 @@ function drawMeasure2(c, t, P, col, r) {           // CAM2: biên dưới (cạn
   for (const [y, s] of [[yT, 1], [yB, -1]]) { c.moveTo(dx - 4, y + s * 5); c.lineTo(dx, y); c.lineTo(dx + 4, y + s * 5); } c.stroke();
   hudText(c, `h ${r.h.toFixed(1)} mm`, Math.min(dx + 6, PW - 60), (yT + yB) / 2 + 4, 'bold 10.5px Barlow, Segoe UI', 'rgba(0,0,0,.72)', '#ffd166');
   const main = t.type === 'S' ? `phẳng ${sgn(r.meas - 90)}°` : `θ ${r.meas.toFixed(2)}°`;
-  resultTag(c, `${main} · ngang ${sgn(r.roll)}° ${r.pass ? 'PASS' : 'NG'}`, a[0], yB + 26, col);
+  resultTag(c, `${main} · ngang ${sgn(r.roll)}° ${r.passGeo === false ? 'NG' : r.pass ? 'PASS' : 'góc OK'}`, a[0], yB + 26, col);
 }
 function resultTag(c, s, tx, ty, col) {
   c.font = 'bold 12px Barlow, Segoe UI'; const w = c.measureText(s).width;
@@ -1308,6 +1435,7 @@ $('tab-cam1').addEventListener('click', () => { state.pipCam = tests[state.activ
 $('tab-cam2').addEventListener('click', () => { state.pipCam = tests[state.active].cam === 'CAM2' ? null : 'CAM2'; updatePip(); });
 $('btn-ng').addEventListener('click', e => { state.forceNG = !state.forceNG; e.currentTarget.classList.toggle('on', state.forceNG); toast(state.forceNG ? 'Bật mô phỏng gá lệch: lần gá kế tiếp sẽ lệch ngoài dung sai → NG' : 'Tắt mô phỏng gá lệch'); });
 $('btn-drop').addEventListener('click', dropDemo);
+$('btn-flip').addEventListener('click', e => { state.forceFlip = !state.forceFlip; e.currentTarget.classList.toggle('on', state.forceFlip); toast(state.forceFlip ? 'Bật mô phỏng gá ngược: lần gá kế tiếp xoay mẫu 180° – bóng y hệt, góc vẫn đúng, chỉ tem phát hiện sai điểm chạm' : 'Tắt mô phỏng gá ngược'); });
 $('btn-labels').addEventListener('click', e => { const on = !e.currentTarget.classList.contains('on'); e.currentTarget.classList.toggle('on', on); labels.forEach(l => l.visible = on); });
 $('btn-fov').addEventListener('click', e => { const on = !e.currentTarget.classList.contains('on'); e.currentTarget.classList.toggle('on', on); helpers.visible = on; dimLabels.forEach(l => l.visible = on); });
 $('btn-next').addEventListener('click', () => selectTest((state.active + 1) % tests.length));
@@ -1344,6 +1472,7 @@ function animate(ts) {
   }
   if (fly) { fly.t += dt; const k = ease(Math.min(1, fly.t / fly.dur)); camera.position.lerpVectors(fly.p0, fly.p1, k); controls.target.lerpVectors(fly.t0, fly.t1, k); if (fly.t >= fly.dur) fly = null; }
   applyState(); updateTower(); controls.update();
+  { const near = camera.position.distanceTo(PC0) < 0.75 && $('btn-labels').classList.contains('on') && !state.dropping; tagLbls.forEach(l => l.visible = near); }
   scene.updateMatrixWorld();
   const img = renderPip();
   renderer.render(scene, camera);
@@ -1356,10 +1485,8 @@ if (innerWidth < 700) { labels.forEach(l => l.visible = false); $('btn-labels').
 seatNow(0); updateCam2Geo(); sizePip(); refreshGrid(); updateStepCard(); refreshSlideBtn(); setPhase('confirm'); updatePip();
 document.documentElement.lang = 'vi';
 if (document.fonts) document.fonts.ready.then(() => { drawHMI(); drawStationFace(); drawZone(); });
-window.__app = { camera, controls, V, selectTest, confirmMount, dropDemo, state, tests, results, measure, flyTo, VIEWS, setStow: v => { state.stowed = v; refreshSlideBtn(); } };
+window.__app = { camera, controls, V, selectTest, confirmMount, dropDemo, state, tests, results, measure, flyTo, VIEWS, readTags, tagCheck, featOf, setStow: v => { state.stowed = v; refreshSlideBtn(); } };
 renderer.setAnimationLoop(animate);
 </script>
-
-</body></html>
 
 </body></html>
